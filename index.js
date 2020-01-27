@@ -17,11 +17,11 @@ class IsES5Plugin {
             try {
               Acorn.parse(source, { ecmaVersion: this.options.ecmaVersion });
             } catch (err) {
-              if (err instanceof SyntaxError) {
+              // if (err instanceof SyntaxError) {
                 compilation.errors.push(new IsES5Error(chunkName, err, source));
-              } else {
-                compilation.errors.push(err);
-              }
+              // } else {
+              //   compilation.errors.push(err);
+              // }
             }
           }
         });
